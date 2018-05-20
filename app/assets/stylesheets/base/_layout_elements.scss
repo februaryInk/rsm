@@ -1,0 +1,104 @@
+section {
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+
+.banner {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    margin: 0;
+    padding: 6.5em 0;
+    width: 100%;
+    
+    &.-black {
+        background-color: black;
+    }
+    
+    &.-stones {
+        @include translucent-image( 0.50, 'stones.jpg' );
+        
+        @media ( max-width: $media-mobile-max ) {
+            background-image: image-url( 'stones.jpg' );
+        }
+
+        @media ( min-width: $media-4k-min ) {
+            background-image: image-url( 'stones.jpg' );
+        }
+    }
+}
+
+.blue-herring {
+    @include translucent-image( 0.20, 'herringbone.svg' );
+}
+
+.expandable {
+    cursor: pointer;
+    
+    &.-hover {
+        background-color: $pattens-blue;
+    }
+    
+    &.-open {
+        .expandable__arrow {
+            transform: rotate( 90deg );
+            transition: all 0.25s ease-out;
+        }
+    }
+}
+
+.expandable__arrow {
+    transform: rotate( 0deg );
+    transition: all 0.25s ease-out;
+    
+    display: inline-block;
+    margin-right: 1em;
+    text-align: center;
+    width: 1.25em;
+}
+
+.expandable__hidden {
+    display: none;
+    padding: 1em;
+    
+    p {
+        font-size: 1em;
+    }
+}
+
+.expandable__shown {
+    padding: 1em;
+}
+
+.expandable__title {
+    margin-bottom: 0;
+}
+
+.mobile-padded {
+    @media ( max-width: $media-mobile-max ) {
+        padding-bottom: 5em;
+    }
+}
+
+.page-content {
+}
+
+.panel {
+    background-color: $white;
+    padding: 1em;
+    
+    &.-dark {
+        background-color: $dark;
+        color: $white;
+    }
+}
+
+#map-canvas {
+    height: 100%;
+    width: 100%;
+}
+
+#page-wrapper {
+    flex: 1;
+}
