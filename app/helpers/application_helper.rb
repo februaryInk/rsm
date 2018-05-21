@@ -1,5 +1,7 @@
 module ApplicationHelper
   
+  include FormsHelper
+  
   # Business slogan.
   def business_slogan
     'Engraving for the memories you\'ll never forget.'
