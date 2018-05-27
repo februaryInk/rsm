@@ -10,7 +10,7 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tag
-  %body
+  %body{ :class => content_for?( :body_class ) ? yield( :body_class ) : '' }
     #page-wrapper
       - if content_for?( :header ) || content_for?( :sub_header )
         %header.header

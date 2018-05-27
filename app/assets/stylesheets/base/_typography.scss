@@ -9,6 +9,11 @@ body {
     color: $color-text;
 }
 
+body.alt-color {
+    background-color: $cloud-dust;
+    color: $wild-sand;
+}
+
 h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 16px; }
 
 label {
@@ -49,7 +54,7 @@ em, i { font-style: italic; }
 .align-right { text-align: right; }
 .centered { text-align: center; }
 
-.heading { 
+.heading {
     @include heading-family;
     
     &.-small { font-size: 1.75em; }
@@ -85,12 +90,12 @@ em, i { font-style: italic; }
 .t-white { color: $white; }
 
 a, span { &.underlined { text-decoration: underline; } }
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     
-    &.underlined { 
+    &.underlined {
         border-bottom: 1px solid $text;
-        padding-bottom: 4px; 
-        width: 100%; 
-    } 
+        padding-bottom: 4px;
+        width: 100%;
+    }
 }
