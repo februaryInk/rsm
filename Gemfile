@@ -24,6 +24,9 @@ gem 'haml-rails'
 # Use the JavaScript library jQuery.
 gem 'jquery-rails'
 
+# Transform images for use with Rails's Active Storage.
+gem 'mini_magick'
+
 # Use the PostgreSQL database gem.
 gem 'pg'
 
