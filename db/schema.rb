@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_171746) do
 
   create_table "materials", force: :cascade do |t|
     t.string "name"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,7 +77,8 @@ ActiveRecord::Schema.define(version: 2018_05_28_171746) do
   create_table "photos", force: :cascade do |t|
     t.bigint "material_id"
     t.bigint "product_id"
-    t.string "description"
+    t.string "file_code"
+    t.text "alt_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["material_id"], name: "index_photos_on_material_id"
