@@ -14,7 +14,7 @@
 /config/database.yml
 /doc/
 /log/*.log
-/public/spree/
+/public/
 /storage
 /tmp
 
@@ -40,9 +40,9 @@
 *.o
 *.so
 
-# Compressed packages 
+# Compressed packages
 
-# If any of these do exist in a project folder, it is better to unpack them and let Git 
+# If any of these do exist in a project folder, it is better to unpack them and let Git
 # handle any necessary compression.
 
 # 7-zip archives.

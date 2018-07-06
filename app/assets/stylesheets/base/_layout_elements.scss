@@ -11,14 +11,14 @@ section {
     margin: 0;
     padding: 6.5em 0;
     width: 100%;
-    
+
     &.-black {
         background-color: black;
     }
-    
+
     &.-stones {
         @include translucent-image( 0.50, 'stones.jpg' );
-        
+
         @media ( max-width: $media-mobile-max ) {
             background-image: image-url( 'stones.jpg' );
         }
@@ -35,11 +35,11 @@ section {
 
 .expandable {
     cursor: pointer;
-    
+
     &.-hover {
         background-color: $pattens-blue;
     }
-    
+
     &.-open {
         .expandable__arrow {
             transform: rotate( 90deg );
@@ -51,7 +51,7 @@ section {
 .expandable__arrow {
     transform: rotate( 0deg );
     transition: all 0.25s ease-out;
-    
+
     display: inline-block;
     margin-right: 1em;
     text-align: center;
@@ -61,7 +61,7 @@ section {
 .expandable__hidden {
     display: none;
     padding: 1em;
-    
+
     p {
         font-size: 1em;
     }
@@ -73,6 +73,18 @@ section {
 
 .expandable__title {
     margin-bottom: 0;
+}
+
+.masonry {
+  column-count: 4;
+  column-gap: 1em;
+  line-height: 0; // Prevent vertical gaps
+
+  img {
+    height: auto;
+    padding-bottom: 1em;
+    width: 100%;
+  }
 }
 
 .mobile-padded {
@@ -87,7 +99,7 @@ section {
 .panel {
     background-color: $white;
     padding: 1em;
-    
+
     &.-dark {
         background-color: $dark;
         color: $white;

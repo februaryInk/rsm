@@ -1,0 +1,8 @@
+%main.page-content
+  %section
+    %div.content
+      %div.grid-container
+        %div.grid-100.masonry
+          - @photos.each do | photo |
+            -# TODO: After Rails 5.3, the resize syntax will change.
+            = image_tag photo.image.variant( :resize => '500x' ), :align => 'absmiddle'

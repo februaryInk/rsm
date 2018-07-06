@@ -21,6 +21,9 @@ gem 'font-awesome-rails'
 # Use HAML markup.
 gem 'haml-rails'
 
+# Use image variants with Rails's Active Storage.
+gem 'image_processing'
+
 # Use the JavaScript library jQuery.
 gem 'jquery-rails'
 
