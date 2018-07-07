@@ -1,11 +1,26 @@
-.header__upper
-  .grid-container
-    .grid-50
-      %h1.heading.-signature.margin-b0.t-white
-        = business_name
-    .grid-50
-      Links
-.header__lower
-  .grid-container
-    .grid-100
-      Links
+%header.header
+  %div.header__upper
+    %div.grid-container
+      %div.grid-100
+        %h1.heading.-large.-signature.margin-b0
+          = business_name
+  %div.header__lower
+    %div.grid-container
+      %div.grid-100
+        %nav
+          %ul
+            %li
+              = link_to 'Home', root_path
+            %li
+              = link_to 'Order', order_path
+            %li
+              = link_to 'Portfolio', photos_path
+            %li
+              = link_to 'Artwork', artworks_path
+            -# %li
+              -# = link_to 'Fonts', fonts_path
+            %li
+              = link_to 'About', about_path
+            -# Rock Solid Memories, Sizes, Materials
+            %li
+              = link_to 'Contact', new_email_path

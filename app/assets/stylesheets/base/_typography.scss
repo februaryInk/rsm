@@ -5,13 +5,13 @@ a {
 
 body {
     @include text-family;
-    
-    color: $color-text;
+
+    color: $text;
 }
 
 body.alt-color {
-    background-color: $cloud-dust;
-    color: $wild-sand;
+    background-color: $space-shuttle;
+    color: $alto;
 }
 
 h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 16px; }
@@ -56,13 +56,13 @@ em, i { font-style: italic; }
 
 .heading {
     @include heading-family;
-    
+
     &.-small { font-size: 1.75em; }
     &.-medium { font-size: 2em; }
     &.-large { font-size: 3em; }
     &.-grand { font-size: 5em; }
     &.-giant { font-size: 7em; }
-    
+
     &.-signature { @include signature-family; font-weight: bold; }
     &.-weighted { font-weight: 400; }
 }
@@ -92,7 +92,7 @@ em, i { font-style: italic; }
 a, span { &.underlined { text-decoration: underline; } }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    
+
     &.underlined {
         border-bottom: 1px solid $text;
         padding-bottom: 4px;

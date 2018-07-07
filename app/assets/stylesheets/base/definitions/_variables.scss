@@ -1,37 +1,31 @@
 // Color names from Color Name & Hue tool
 // (http://www.color-blindness.com/color-name-hue/).
 
-$cloud: #c8beb7;
-$cloud-dust: #656256;
-$horizon: #62858e;
-$juniper: #73898e;
-$wild-sand: #f5f3f1;
+$black: #000000;
+$white: #ffffff;
 
+// Color Scheme
+$alto: #c9c0c1;
+$hurricane: #8b7e75;
+$neptune: #71a0aa;
+$scandal: #bcdedd;
+$space-shuttle: #4d463e;
+
+// Flash
 $corn-silk: #fff7e2;
-$crusta: #f0764f;
 $glade-green: #577c53;
-$keppel: #3294aa;
-$linen: #fcf5ef;
 $lotus: #905650;
 $onahau: #d9edf6;
 $pale-rose: #f2dedf;
-$pattens-blue: #e4edf5;
 $peppermint: #d6e8d2;
 $sandrift: #b29970;
 $sea-pink: #f09090;
 $shakespeare: #6298b4;
 
-$black: #000000;
-$burnham: #23443f;
-$ice-cold: #b9e7dd;
-$racing-green: #192420;
-$tenne: #c74900;
-$white: #ffffff;
+// Applications
+$text: $space-shuttle;
 
-$color-text: $cloud-dust;
-
-$bright: $tenne;
-$dark: $burnham;
-$light: $ice-cold;
-$subtle: $wild-sand;
-$text: $racing-green;
+$bright: $neptune;
+$dark: $space-shuttle;
+$light: $scandal;
+$subtle: $alto;
