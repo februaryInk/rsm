@@ -6,7 +6,7 @@
 
 // detect the open link and style it a certain way.
 function openLink ( path ) {
-    
+
     var openLink = document.querySelectorAll( 'a[ href="' + path + '" ].js-openable-link' );
     addClass( openLink, '-open' );
 }
@@ -15,19 +15,15 @@ function readyExpandables (  ) {
     var expandables = document.getElementsByClassName( 'js-expandable' );
 
     for ( var i = 0; i < expandables.length; i++ ) {
-        
         expandables[ i ].onmouseover = function ( evt ) {
-            
             addClass( this, '-hover' );
         }
 
         expandables[ i ].onmouseout = function ( evt ) {
-            
             removeClass( this, '-hover' );
         }
-        
+
         expandables[ i ].onclick = function ( evt ) {
-            
             if ( hasClass( this, '-open' ) ) {
                 removeClass( this, '-open' );
             } else {
@@ -40,16 +36,16 @@ function readyExpandables (  ) {
 
 function readyHeader (  ) {
     var path = window.location.pathname;
-    
+
     openLink( path );
-    
+
     var navToggles = document.getElementsByClassName( 'js-nav-toggle' );
 
     for ( var i = 0; i < navToggles.length; i++ ) {
         navToggles[ i ].onclick = function ( evt ) {
-            
+
             var target = this.dataset.target;
-            
+
             if ( hasClass( this, '-open' ) ) {
                 removeClass( this, '-open' );
                 removeClass( document.getElementById( target ), '-open' )

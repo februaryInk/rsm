@@ -33,6 +33,26 @@ section {
     @include translucent-image( 0.20, 'herringbone.svg' );
 }
 
+.color {
+    width: 100%;
+
+    &.-dark {
+        background-color: $dark;
+    }
+
+    &.-light {
+        background-color: $light;
+    }
+
+    &.-subtle {
+        background-color: $subtle;
+    }
+
+    &.-translucent-white {
+        @include translucent-color( 0.60, $white );
+    }
+}
+
 .expandable {
     cursor: pointer;
 
@@ -103,6 +123,17 @@ section {
     &.-dark {
         background-color: $dark;
         color: $white;
+    }
+}
+
+.photo {
+    background-color: $white;
+    margin: 0.5em 0;
+    padding: 1em;
+    width: 100%;
+
+    img {
+        width: 100%;
     }
 }
 

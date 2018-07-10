@@ -1,2 +1,18 @@
-%h1 CorePages#home
-%p Find me in app/views/core_pages/home.html.haml
+%main.page-content
+  %section.color.-dark
+    %div.content
+      %div.grid-container
+        %div.grid-100
+          %h1.heading.-signature.t-white
+            Rock Solid Memories
+          %h2.t-white
+            Stone engraving for the memories you'll never forget.
+          %p.t-white
+            Welcome to the Rock Solid Memories website. Our company custom engraves rocks for a variety of occasions and purposes.
+  %section.color.-subtle
+    %div.content
+      %div.grid-container
+        - @photos.each do | photo |
+          %div.grid-25
+            %div.photo
+              = image_tag photo.image.variant( combine_options: {thumbnail: "500x500^", gravity: "center", extent: "500x500"} ), :align => 'absmiddle', :width => '100%'

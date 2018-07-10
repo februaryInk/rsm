@@ -6,6 +6,7 @@ class CreatePhotos < ActiveRecord::Migration[5.2]
 
       t.string :file_code
       t.text :alt_text
+      t.boolean :showcase, :default => false
 
       t.timestamps
     end

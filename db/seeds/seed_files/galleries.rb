@@ -37,10 +37,8 @@ collections = [
 
 collections.each do |collection|
   Collection.find_or_initialize_by( :name => collection[ :name ] ).tap do | o |
-    if ( $write && o.new_record? ) || ( $overwrite && !o.new_record? )
-      o.assign_attributes( collection )
-      write_or_overwrite( o )
-    end
+    o.assign_attributes( collection )
+    o.save
   end
 end
 
