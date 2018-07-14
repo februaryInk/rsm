@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-
   resources :artworks, :only => [ :index ]
   resources :fonts, :only => [ :index ]
+  resources :materials, :only => [ :index ]
   resources :photos, :only => [ :index ], :path => 'portfolio'
+  resources :sizes, :only => [ :index ]
 
   get  '/contact-us', :to => 'emails#new', :as => 'new_email'
   post '/contact-us', :to => 'emails#create', :as => 'emails'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_171746) do
+ActiveRecord::Schema.define(version: 2018_07_14_151420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,20 @@ ActiveRecord::Schema.define(version: 2018_05_28_171746) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "material_sizes", force: :cascade do |t|
+    t.bigint "material_id"
+    t.bigint "size_id"
+    t.string "longest_dimension"
+    t.string "thickness"
+    t.string "weight"
+    t.float "price"
+    t.boolean "shippable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["material_id"], name: "index_material_sizes_on_material_id"
+    t.index ["size_id"], name: "index_material_sizes_on_size_id"
+  end
+
   create_table "materials", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -92,8 +106,17 @@ ActiveRecord::Schema.define(version: 2018_05_28_171746) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sizes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_sizes_on_name"
+  end
+
   add_foreign_key "artwork_collections", "artworks"
   add_foreign_key "artwork_collections", "collections"
+  add_foreign_key "material_sizes", "materials"
+  add_foreign_key "material_sizes", "sizes"
   add_foreign_key "photos", "materials"
   add_foreign_key "photos", "products"
 end
