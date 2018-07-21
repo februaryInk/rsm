@@ -6,8 +6,9 @@
 
 // detect the open link and style it a certain way.
 function openLink ( path ) {
-
-    var openLink = document.querySelectorAll( 'a[ href="' + path + '" ].js-openable-link' );
+    var openLink = document.querySelectorAll( 'a[ href="' + path + '" ].js-openable-link' ).length ?
+        document.querySelectorAll( 'a[ href="' + path + '" ].js-openable-link' ).length :
+        document.querySelectorAll( '.js-openable-links a[ href="' + path + '" ]' );
     addClass( openLink, '-open' );
 }
 
