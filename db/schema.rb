@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_14_151420) do
+ActiveRecord::Schema.define(version: 2018_07_30_002237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,18 @@ ActiveRecord::Schema.define(version: 2018_07_14_151420) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "listings", force: :cascade do |t|
+    t.bigint "material_id"
+    t.bigint "size_id"
+    t.string "title"
+    t.string "link"
+    t.boolean "inactive", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["material_id"], name: "index_listings_on_material_id"
+    t.index ["size_id"], name: "index_listings_on_size_id"
+  end
+
   create_table "material_sizes", force: :cascade do |t|
     t.bigint "material_id"
     t.bigint "size_id"
@@ -115,6 +127,8 @@ ActiveRecord::Schema.define(version: 2018_07_14_151420) do
 
   add_foreign_key "artwork_collections", "artworks"
   add_foreign_key "artwork_collections", "collections"
+  add_foreign_key "listings", "materials"
+  add_foreign_key "listings", "sizes"
   add_foreign_key "material_sizes", "materials"
   add_foreign_key "material_sizes", "sizes"
   add_foreign_key "photos", "materials"

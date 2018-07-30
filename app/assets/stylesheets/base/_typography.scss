@@ -39,10 +39,6 @@ ul {
 b, strong { font-weight: bold; }
 em, i { font-style: italic; }
 
-.align-center { text-align: center; }
-.align-left { text-align: left; }
-.align-right { text-align: right; }
-
 .bulleted {
     display: block;
     font-size: 18px;
@@ -67,6 +63,19 @@ em, i { font-style: italic; }
     &.-weighted { font-weight: 400; }
 }
 
+.link-list {
+  list-style: none;
+  text-transform: uppercase;
+
+  a {
+    color: $bright;
+  }
+
+  li {
+    padding: 0.5em 0;
+  }
+}
+
 .nowrap { white-space: nowrap; }
 
 .t-small { font-size: 16px; }
@@ -74,6 +83,10 @@ em, i { font-style: italic; }
 .t-large { font-size: 20px; }
 .t-grand { font-size: 24px; }
 .t-giant { font-size: 48px; }
+
+.t-center { text-align: center; }
+.t-left { text-align: left; }
+.t-right { text-align: right; }
 
 .t-empty {
     background-color: $subtle;

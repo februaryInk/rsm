@@ -1,2 +1,50 @@
-%h1 CorePages#order
-%p Find me in app/views/core_pages/order.html.haml
+%main.page-content
+  %div.content.grid-container
+    %div.grid-80
+      %section#placing-and-order
+        %h1.heading
+          Placing an Order
+        %p
+          We partner with Etsy to ensure a secure, timely ordering process with
+          discounted shipping. To make a purchase with us, customers will need
+          to create an Etsy account. We have a number of prefabricated designs
+          and the option to request something custom.
+        %div.t-center
+          = link_to 'RSM on Etsy', etsy_shop_url, :class => 'button -bright -large'
+      %section#premade-designs
+        %h1.heading
+          Premade Designs
+      %section#custom-designs
+        %h1.heading
+          Custom Designs
+        %div.grid-container
+          %div.grid-60
+            %p
+              To place a custom order, visit our Etsy shop page and select the
+              "Request Custom Order" button.
+            %p
+              To understand the pricing for custom orders, please see our
+              #{link_to 'sizing and pricing guide', ''}.
+          %div.grid-40
+            = image_tag 'custom_order_button.png', :class => 'full-width'
+        %div.t-center
+          = link_to 'Custom Order', etsy_shop_url, :class => 'button -bright -large'
+      %section#personalization
+        %h1.heading
+          How to Personalize an Order
+        %p
+          When ordering with us on Etsy, please include what you want engraved
+          in the order notes.
+        = image_tag 'order_notes.jpg', :class => 'full-width'
+    %div.grid-20
+      %section
+        %nav
+          %ul.link-list
+            %li
+              = link_to 'Placing an Order', '#placing-an-order'
+            %li
+              = link_to 'Premade Designs', '#premade-designs'
+            %li
+              = link_to 'Custom Designs', '#custom-designs'
+            %li
+              = link_to 'How to Personalize an Order', '#personalization'
