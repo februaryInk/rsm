@@ -54,8 +54,8 @@ materials = [
     :name => 'Natural Rock'
   },
   {
-    :description => 'A cut and tumbled stone that is blue-gray in color and lies flat like a stepping stone. The tumbling gives it soft edges and corners.',
-    :name => 'Cut Bluestone'
+    :description => 'A cut and tumbled stone slab that is blue-gray in color and lies flat like a stepping stone. The tumbling gives it soft edges and corners.',
+    :name => 'Tumbled Bluestone'
   },
   {
     :description => 'A solid cut stone slab that can lie flat or stand upright independently, depending on its size. They are usually either light gray or tan (customers are free to specify which color they prefer).',
@@ -73,3 +73,149 @@ materials.each do | material |
     o.save
   end
 end
+
+sizes = [
+  {
+    :name => 'Small'
+  },
+  {
+    :name => 'Medium'
+  },
+  {
+    :name => 'Large'
+  },
+  {
+    :name => 'Extra Large'
+  }
+]
+
+sizes.each do | size |
+  Size.find_or_initialize_by( :name => size[ :name ] ).tap do | o |
+    o.assign_attributes( size )
+    o.save
+  end
+end
+
+material_sizes = [
+  {
+    :longest_dimension => '5" to 6"',
+    :material_id => Material.called( 'Natural Rock' ).id,
+    :price => 17.00,
+    :shippable => true,
+    :shipping => 12.85,
+    :size_id => Size.called( 'Small' ).id,
+    :stands_unassisted => 'Optional',
+    :thickness => nil,
+    :weight => '10 to 15 lbs.'
+  },
+  {
+    :longest_dimension => '7" to 9"',
+    :material_id => Material.called( 'Natural Rock' ).id,
+    :price => 40.00,
+    :shippable => true,
+    :shipping => 20.00,
+    :size_id => Size.called( 'Medium' ).id,
+    :stands_unassisted => 'Yes',
+    :thickness => nil,
+    :weight => '15 to 30 lbs.'
+  },
+  {
+    :longest_dimension => '10" to 12"',
+    :material_id => Material.called( 'Natural Rock' ).id,
+    :price => 85.00,
+    :shippable => true,
+    :shipping => 35.00,
+    :size_id => Size.called( 'Large' ).id,
+    :stands_unassisted => 'Yes',
+    :thickness => nil,
+    :weight => '35 to 55 lbs.'
+  },
+  {
+    :longest_dimension => '13" to 15"',
+    :material_id => Material.called( 'Natural Rock' ).id,
+    :price => 120.00,
+    :shippable => false,
+    :shipping => 60.00,
+    :size_id => Size.called( 'Extra Large' ).id,
+    :stands_unassisted => 'Yes',
+    :thickness => nil,
+    :weight => '60 to 90 lbs.'
+  },
+  {
+    :longest_dimension => '8" to 10"',
+    :material_id => Material.called( 'Stone Slab' ).id,
+    :price => 40.00,
+    :shippable => true,
+    :shipping => 15.00,
+    :size_id => Size.called( 'Medium' ).id,
+    :stands_unassisted => 'No',
+    :thickness => '2" to 2 1/2"',
+    :weight => '15 to 20 lbs.'
+  },
+  {
+    :longest_dimension => '11" to 12"',
+    :material_id => Material.called( 'Stone Slab' ).id,
+    :price => 85.00,
+    :shippable => true,
+    :shipping => 35.00,
+    :size_id => Size.called( 'Large' ).id,
+    :stands_unassisted => 'Yes',
+    :thickness => '2 3/4" to 4"',
+    :weight => '45 to 70 lbs.'
+  },
+  {
+    :longest_dimension => '14" to 15"',
+    :material_id => Material.called( 'Stone Slab' ).id,
+    :price => 120.00,
+    :shippable => true,
+    :shipping => 40.00,
+    :size_id => Size.called( 'Extra Large' ).id,
+    :stands_unassisted => 'Yes',
+    :thickness => '2 3/4" to 4"',
+    :weight => '60 to 90 lbs.'
+  },
+  {
+    :longest_dimension => '8" to 10"',
+    :material_id => Material.called( 'Tumbled Bluestone' ).id,
+    :price => 35.00,
+    :shippable => true,
+    :shipping => 14.40,
+    :size_id => Size.called( 'Medium' ).id,
+    :stands_unassisted => 'No',
+    :thickness => '1 3/4" to 2 1/2"',
+    :weight => '10 to 15 lbs.'
+  },
+  {
+    :longest_dimension => '7" to 9"',
+    :material_id => Material.called( 'Cut Stone Round' ).id,
+    :price => 35.00,
+    :shippable => true,
+    :shipping => 14.40,
+    :size_id => Size.called( 'Medium' ).id,
+    :stands_unassisted => 'No',
+    :thickness => '1 3/4" to 2 1/2"',
+    :weight => '10 to 20 lbs.'
+  },
+  {
+    :longest_dimension => '12" to 14"',
+    :material_id => Material.called( 'Cut Stone Round' ).id,
+    :price => 75.00,
+    :shippable => true,
+    :shipping => 20.00,
+    :size_id => Size.called( 'Large' ).id,
+    :stands_unassisted => 'No',
+    :thickness => '1 3/4" to 2 1/2"',
+    :weight => '15 to 25 lbs.'
+  },
+  {
+    :longest_dimension => '15" to 17"',
+    :material_id => Material.called( 'Cut Stone Round' ).id,
+    :price => 95.00,
+    :shippable => true,
+    :shipping => 25.00,
+    :size_id => Size.called( 'Large' ).id,
+    :stands_unassisted => 'No',
+    :thickness => '1 3/4" to 2 1/2"',
+    :weight => '20 to 30 lbs.'
+  }
+]

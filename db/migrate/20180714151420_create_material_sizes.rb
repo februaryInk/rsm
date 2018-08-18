@@ -7,7 +7,9 @@ class CreateMaterialSizes < ActiveRecord::Migration[5.2]
       t.string :longest_dimension
       t.string :thickness
       t.string :weight
+      t.string :stands_unassisted
       t.float :price
+      t.float :shipping
       t.boolean :shippable
 
       t.timestamps

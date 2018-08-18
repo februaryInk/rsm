@@ -85,7 +85,9 @@ ActiveRecord::Schema.define(version: 2018_07_30_002237) do
     t.string "longest_dimension"
     t.string "thickness"
     t.string "weight"
+    t.string "stands_unassisted"
     t.float "price"
+    t.float "shipping"
     t.boolean "shippable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -103,12 +105,15 @@ ActiveRecord::Schema.define(version: 2018_07_30_002237) do
   create_table "photos", force: :cascade do |t|
     t.bigint "material_id"
     t.bigint "product_id"
+    t.bigint "size_id"
     t.string "file_code"
     t.text "alt_text"
+    t.boolean "showcase", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["material_id"], name: "index_photos_on_material_id"
     t.index ["product_id"], name: "index_photos_on_product_id"
+    t.index ["size_id"], name: "index_photos_on_size_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -133,4 +138,5 @@ ActiveRecord::Schema.define(version: 2018_07_30_002237) do
   add_foreign_key "material_sizes", "sizes"
   add_foreign_key "photos", "materials"
   add_foreign_key "photos", "products"
+  add_foreign_key "photos", "sizes"
 end
