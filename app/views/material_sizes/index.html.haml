@@ -1,0 +1,44 @@
+%main.page_content
+  - @materials.each do |material|
+    %section
+      %div.content
+        %div.grid-container
+          %div.grid-100
+            %h2
+              = material.name
+            %p
+              = material.description
+          %div.grid-100
+            %table
+              %thead
+                %tr
+                  %th
+                    Size
+                  %th
+                    Width
+                  %th
+                    Thickness
+                  %th
+                    Weight
+                  %th
+                    Stands Unassisted
+                  %th
+                    Price
+              %tbody
+                - material.sizes.smallest_to_largest.each do |size|
+                  - material_size = MaterialSize.find_by( material: material, size: size )
+                  %tr
+                    %td
+                      = size.name
+                    %td
+                      = material_size.longest_dimension
+                    %td
+                      = material_size.thickness || 'Varies greatly'
+                    %td
+                      = material_size.weight
+                    %td
+                      = material_size.stands_unassisted
+                    %td
+                      = "$#{material_size.price}"
+                      %br
+                      = material_size.shippable? ? "+ $#{material_size.shipping} shipping" : '(Too heavy to ship)'

@@ -219,3 +219,10 @@ material_sizes = [
     :weight => '20 to 30 lbs.'
   }
 ]
+
+material_sizes.each do | material_size |
+  MaterialSize.find_or_initialize_by( :material_id => material_size[ :material_id ], :size_id => material_size[ :size_id ] ).tap do | o |
+    o.assign_attributes( material_size )
+    o.save
+  end
+end
