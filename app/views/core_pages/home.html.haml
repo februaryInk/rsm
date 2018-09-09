@@ -14,7 +14,17 @@
   %section.color.-subtle.shadow
     %div.content
       %div.grid-container
+        %div.grid-100
+          %h2.heading.-signature
+            Our Products
+          %p
+            We have a growing assortment of products that we have designed and engraved. Due to the nature of our materials, every creation is unique. You can view projects that we have completed on our portfolio page.
+          %div.centered.padding-b2.padding-t1
+            = link_to 'Portfolio', photos_path, :class => 'button -bright -large inset'
         - @photos.each do | photo |
           %div.grid-25
             %div.photo
-              = image_tag photo.image.variant( combine_options: {thumbnail: "500x500^", gravity: "center", extent: "500x500"} ), :align => 'absmiddle', :width => '100%'
+              = link_to photos_path do
+                = image_tag photo.image.variant( combine_options: {thumbnail: "500x500^", gravity: "center", extent: "500x500"} ), :align => 'absmiddle', :class => 'inset', :width => '100%'
+  %div.border-outset.-bottom.color.-subtle.shadow
+    %div.border-engraved

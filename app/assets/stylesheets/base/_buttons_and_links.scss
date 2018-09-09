@@ -1,9 +1,10 @@
 .button {
     @include heading-family;
-    
+
     background-color: transparent;
     border: none;
     border-radius: 0.25em;
+    color: $dark;
     cursor: pointer;
     display: inline-block;
     font-size: 1.25em;
@@ -12,57 +13,63 @@
     padding: 0.5em 0;
     position: relative;
     white-space: nowrap;
-    
+
     &.-bright {
         background-color: $bright;
-        color: $white;
+        color: $subtle;
         padding-left: 1.75em;
         padding-right: 1.75em;
-        
+        text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.3 );
+
+        &:focus,
+        &:hover {
+            background-color: darken( $bright, 10% );
+        }
+
         &.-inverse {
             background-color: $white;
             border: 1px solid $bright;
             color: $bright;
         }
     }
-    
+
     &.-dark {
         background-color: $dark;
         color: $white;
         padding-left: 1.5em;
         padding-right: 1.5em;
-        
+
         &.-inverse {
             background-color: $white;
             border: 1px solid $dark;
             color: $dark;
         }
     }
-    
+
     &.-large {
-        font-size: 1.5em;
-        padding-bottom: 1em;
-        padding-top: 1em;
+        font-size: 1.75em;
+        padding-bottom: 0.75em;
+        padding-top: 0.75em;
     }
-    
+
     &.-left {
         float: left;
         margin-right: 8px;
     }
-    
+
     &.-light {
         background-color: $white;
         padding-left: 1.5em;
         padding-right: 1.5em;
     }
-    
+
     &.-right {
         float: right;
         margin-left: 8px;
     }
-    
+
     &.-subtle {
-        background-color: $white;
+        background-color: $subtle;
         padding-left: 1.5em;
         padding-right: 1.5em;
     }
@@ -72,7 +79,7 @@
     overflow: hidden;
     padding-top: 0.5em;
     width: 100%;
-    
+
     &.-large {
         padding-top: 1em;
     }

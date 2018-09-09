@@ -43,6 +43,9 @@ section {
 
 .shadow {
     @include translucent-repeating-image( 0.20, 'shadow.png' );
+
+    color: darken( $dark, 10% );
+    text-shadow: 1px 1px 0px rgba( 256, 256, 256, 0.4 );
 }
 
 .color {
@@ -143,8 +146,6 @@ section {
     width: 100%;
 
     img {
-        box-shadow: 1px 1px 0 rgba( 256, 256, 256, 0.4 ),
-          -1px -1px 0 rgba( 0, 0, 0, 0.2 );
         width: 100%;
     }
 }
