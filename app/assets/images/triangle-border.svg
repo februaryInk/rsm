@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+xmlns:cc="http://creativecommons.org/ns#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:svg="http://www.w3.org/2000/svg"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="20px"
+height="15px"
+viewbox="0 0 20 15"
+id="triangle-border">
+    <polygon 
+    opacity="0.4"
+    points="11,7 17,1 19,3 11,11 3,3 5,1 11,7"
+    style="fill: #ffffff" />
+    <polygon 
+    points="10,6 16,0 18,2 10,10 2,2 4,0 10,6"
+    style="fill: #8b7e75" />
+    <polygon 
+    opacity="0.4"
+    points="1,9 7,15 9,13 1,5 0,6 0,10 1,9"
+    style="fill: #ffffff" />
+    <polygon 
+    points="0,8 6,14 8,12 0,4 0,8"
+    style="fill: #8b7e75" />
+    <polygon 
+    opacity="0.4"
+    points="21,9 15,15 13,13 21,4 21,9"
+    style="fill: #ffffff" />
+    <polygon 
+    points="20,8 14,14 12,12 20,4 20,8"
+    style="fill: #8b7e75" />
+</svg>

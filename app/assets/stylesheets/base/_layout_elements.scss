@@ -29,8 +29,20 @@ section {
     }
 }
 
-.blue-herring {
-    @include translucent-image( 0.20, 'herringbone.svg' );
+.border-engraved {
+    background-image: image-url( 'triangle-border.svg' );
+    background-position: center;
+    background-repeat: repeat-x;
+    height: 35px;
+    width: 100%;
+}
+
+.hatch {
+    @include translucent-repeating-image( 1.00, 'hatch.png' );
+}
+
+.shadow {
+    @include translucent-repeating-image( 0.20, 'shadow.png' );
 }
 
 .color {
@@ -127,12 +139,12 @@ section {
 }
 
 .photo {
-    background-color: $white;
-    margin: 0.5em 0;
-    padding: 1em;
+    padding: 1em 0.5em;
     width: 100%;
 
     img {
+        box-shadow: 1px 1px 0 rgba( 256, 256, 256, 0.4 ),
+          -1px -1px 0 rgba( 0, 0, 0, 0.2 );
         width: 100%;
     }
 }

@@ -111,14 +111,16 @@
 }
 
 .header {
-    background-color: $white;
+    @include translucent-repeating-image( 0.20, 'shadow.png' );
+
+    background-color: $subtle;
     color: #4d463e;
     margin: 0;
+    text-shadow: 1px 1px 0px rgba( 256, 256, 256, 0.4 );
     width: 100%;
 }
 
 .header__lower {
-    background-color: $white;
     text-align: center;
 
     nav > ul {
@@ -135,8 +137,6 @@
 
             a,
             .dropdown__label {
-                border-color: transparent;
-                border-style: solid;
                 color: $medium;
                 display: inline-block;
                 position: relative;
@@ -146,46 +146,16 @@
 
             & > a,
             & > .dropdown__label {
-                border-width: 0 0 3px;
-                padding: 1.5em 1em;
+                padding: 1em;
 
                 &:focus-within,
                 &:hover {
-                    border-color: $light;
+                    color: $dark;
                 }
             }
 
-            & > a {
-                &::after {
-                    border-bottom: 0.8em solid $light;
-                    border-left: 0.6em solid transparent;
-                    border-right: 0.6em solid transparent;
-                }
-
-                &:focus-within,
-                &:hover,
-                &.-open {
-                  &::after {
-                      content: '';
-                      display: block;
-                      left: 50%;
-                      height: 0;
-                      position: absolute;
-                      bottom: -3px;
-                      transform: translateX(-50%);
-                      width: 0;
-                  }
-                }
-
-                &.-open {
-                    border-color: $neptune;
-
-                    &::after {
-                        border-bottom: 1em solid $bright;
-                        border-left: 0.8em solid transparent;
-                        border-right: 0.8em solid transparent;
-                    }
-                }
+            & > a.-open {
+                color: darken( $neptune, 15% );
             }
         }
     }

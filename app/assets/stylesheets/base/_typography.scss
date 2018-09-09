@@ -97,6 +97,11 @@ em, i { font-style: italic; }
     text-transform: uppercase;
 }
 
+.t-engraved {
+  color: darken( $dark, 10% );
+  text-shadow: 1px 1px 0px rgba( 256, 256, 256, 0.4 );
+}
+
 .t-bright { color: $bright; }
 .t-light { color: $light; }
 .t-subtle { color: $subtle; }
